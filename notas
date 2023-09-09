@@ -6,3 +6,7 @@ Get: obtener info-> Mostrar los productos de la base de datos
 Put: modificaciones-> Modificar la base de datos
 Post: Crear elementos
 Delete: Elminiar
+
+Los end point estaticos deben estar antes de los dinamicos
+primero los post y despues los gets
+
