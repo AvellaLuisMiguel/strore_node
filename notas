@@ -1,0 +1,8 @@
+API RESTful
+
+REST-> Servicios web a traves del protocolo http con los metodos:
+
+Get: obtener info-> Mostrar los productos de la base de datos
+Put: modificaciones-> Modificar la base de datos
+Post: Crear elementos
+Delete: Elminiar
