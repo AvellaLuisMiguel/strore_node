@@ -1,15 +1,14 @@
 const express = require('express');//trae express
 const routerApi = require('./routes');
+
 const app = express();//creacion de un aplicacion con el constructor de express()
 const port = 3000;//Puerto donde se va a ejecuar el servidor
 
-app.get('/', (req,res)=>{//ruta original
-  res.send("Hola mi server en express");
-});
+app.use(express.json())
 
 routerApi(app)
 
-app.get('/categories/:categoryId/products/:productId', (req,res)=>{
+/*app.get('/categories/:categoryId/products/:productId', (req,res)=>{
   const { categoryId, productId} = req.params;
   res.json({
     categoryId,
@@ -31,7 +30,7 @@ app.get('/users', (req,res)=>{//los parametros se envian con $
   }else {
     res.send("No hay params")
   }
-});
+});*/
 
 app.listen(port,()=>{
   console.log('Mi port' + port)
