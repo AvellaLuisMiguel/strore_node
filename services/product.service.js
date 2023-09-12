@@ -6,7 +6,7 @@ class Product{
     //this.fillProducts(23);
   }
 
-  fillProducts(number){
+  async fillProducts(number){
     for (let index = 0; index < number; index++) {
       this.products.push({
         name: faker.commerce.productName(),
@@ -15,6 +15,19 @@ class Product{
       });
     }
   }
+
+  async create(body){
+    this.products.push({
+      name: body.name,
+      price: body.price,
+      image: body.image
+    })
+  }
+
+  async findByName(name){
+    return this.products.find(el => el.name === name);
+  }
+
 }
 
 module.exports=Product;

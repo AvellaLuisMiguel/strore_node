@@ -4,12 +4,22 @@ const router= express.Router();
 
 const product=new Product();
 
-router.get('/:number_products', (req,res)=>{
+router.get('/:number_products', async (req,res)=>{
   const { number_products }=req.params;
-  product.fillProducts(number_products);
-  res.json(product.products)
+  await product.fillProducts(number_products);
+  res.json(product.products);
 })
 
+router.post('/create', async (req, res)=>{
+  const body=req.body;
+  await product.create(body);
+})
+
+router.get('/findByName/:name', async(req,res)=>{
+  const { name }= req.params;
+  const prouctFind=await product.findByName(name);
+  res.json(prouctFind)
+})
 
 
 
